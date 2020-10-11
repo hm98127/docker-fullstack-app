@@ -1,0 +1,10 @@
+FROM node:alpine
+
+#해당 어플의 소스 코드들이 들어가게 된다. 
+WORKDIR /app
+COPY ./package.json ./
+RUN npm install
+COPY . .
+
+# start가 아닌 dev인 이유는 코드가 변경될때 바로 반영르 시켜주게 하는 nodemon이라는 모듈을 사용하고 있기 떄문!
+CMD ["npm", "run", "dev"]

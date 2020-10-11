@@ -1,0 +1,12 @@
+#개발을 위한 Dockerfile
+FROM node:alpine
+
+WORKDIR /app
+
+COPY /Users/hans/fullstact-app/frontend/packege.json .
+
+RUN npm install 
+
+COPY ./ ./
+
+CMD ["npm", "run", "start"]
